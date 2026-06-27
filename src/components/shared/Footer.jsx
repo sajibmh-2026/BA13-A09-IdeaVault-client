@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FaGithub, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { HiLightBulb } from "react-icons/hi";
 
 export default function Footer() {
@@ -78,7 +79,7 @@ export default function Footer() {
                 <FaGithub className="text-xl" />
               </a>
               <a href="#" className="text-gray-400 hover:text-violet-400 transition-colors">
-                <FaTwitter className="text-xl" />
+                <FaXTwitter className="text-xl" />
               </a>
               <a href="#" className="text-gray-400 hover:text-violet-400 transition-colors">
                 <FaLinkedin className="text-xl" />
