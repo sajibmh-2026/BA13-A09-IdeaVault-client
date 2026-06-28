@@ -66,6 +66,11 @@ export default function AuthProvider({ children }) {
         password,
       });
 
+      // Store token for cross-origin auth
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+
       toast.success("Registration successful!");
       return res.data;
     } catch (error) {
@@ -84,6 +89,12 @@ export default function AuthProvider({ children }) {
       await signInWithEmailAndPassword(auth, email, password);
 
       const res = await axiosInstance.post("/auth/login", { email, password });
+
+      // Store token for cross-origin auth
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+
       toast.success("Login successful!");
       return res.data;
     } catch (error) {
@@ -108,6 +119,11 @@ export default function AuthProvider({ children }) {
         photoURL,
       });
 
+      // Store token for cross-origin auth
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+
       toast.success("Google login successful!");
       return res.data;
     } catch (error) {
@@ -124,6 +140,7 @@ export default function AuthProvider({ children }) {
     try {
       await signOut(auth);
       await axiosInstance.post("/auth/logout");
+      localStorage.removeItem("token");
       setUser(null);
       toast.success("Logged out successfully");
     } catch (error) {
