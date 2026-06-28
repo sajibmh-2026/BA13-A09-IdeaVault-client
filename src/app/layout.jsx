@@ -9,6 +9,9 @@ export const metadata = {
   title: "IdeaVault - Startup Idea Sharing Platform",
   description:
     "Share, explore, and validate startup ideas with a community of entrepreneurs and innovators.",
+  icons: {
+    icon: "/fav.png",
+  },
 };
 
 export default function RootLayout({ children }) {
